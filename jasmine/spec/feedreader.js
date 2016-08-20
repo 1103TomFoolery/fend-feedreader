@@ -114,9 +114,9 @@ $(function() {
          it('should change content after new feed is loaded', function(done) {
             loadFeed(1, function() {
                 content2 = $('.feed').children().text();
+                expect(content1).not.toEqual(content2);            
                 done();
             });
-            expect(content1).not.toEqual(content2);
          });
 
 
