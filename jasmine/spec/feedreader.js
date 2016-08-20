@@ -31,25 +31,32 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-        it('url should be defined', function() {
-            allFeeds.forEach(function(feed){
-                expect(feed.url).toBeDefined();
-                expect(feed.url.length).not.toBe(0);
+ 
+        function testEachFeedURL(i){
+            it('url should be defined', function() {
+                expect(allFeeds[i].url).toBeDefined();
+                expect(allFeeds[i].url.length).not.toBe(0);
             });
-         });
+        };
+        for(var i=0; i<allFeeds.length; i++) {
+            testEachFeedURL(i);
+        };
 
         /* Test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-        it('name should be defined', function() {
-            allFeeds.forEach(function(feed) {
-                expect(feed.name).toBeDefined();
-                expect(feed.name.length).not.toBe(0);
+ 
+        function testEachFeedName(i){
+            it('name should be defined', function() {
+                expect(allFeeds[i].name).toBeDefined();
+                expect(allFeeds[i].name.length).not.toBe(0);                
             });
-         });
+        };
+        for(var i=0; i<allFeeds.length; i++) {
+            testEachFeedName(i);
+        };
     });
-
 
     /* New test suite named "The menu" */
     describe('The menu', function() {
